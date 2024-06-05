@@ -1,4 +1,4 @@
-name: PostgreSQL Service Example with job being executed in the host (GitHub Runner host)
+name: PostgreSQL Service example with job being executed in the host (GitHub Runner host)
 on: push
 
 jobs:
