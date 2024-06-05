@@ -27,3 +27,16 @@ pgclient.query('SELECT * FROM student', (err, res) => {
     console.log(err, res.rows) // Print the data in student table
     pgclient.end()
 });
+
+const text2 = 'INSERT INTO student(firstname, lastname, age, address, email) VALUES($1, $2, $3, $4, $5) RETURNING *'
+const values2 = ['Felipe', 'León', 28, 'Madrid', 'felipeleonfernandez@gmail.com']
+
+pgclient.query(text2, values2, (err, res) => {
+    if (err) throw err
+});
+
+pgclient.query('SELECT * FROM student', (err, res) => {
+    if (err) throw err
+    console.log(err, res.rows) // Print the data in student table
+    pgclient.end()
+});
